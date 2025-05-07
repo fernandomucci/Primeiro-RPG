@@ -2,7 +2,7 @@
 #include "cabecalhoCombate.h"
 
 
-void CombateInimigo(personagem* atacante, personagem* defensor, magia* tipo) {
+void CombateInimigo(personagem* atacante, personagem* defensor, magiaBase* tipo) {
     atacante->defendendo = 0;
 
    print_animated("\n TURNO INIMIGO!!!\n2");
@@ -65,7 +65,7 @@ void CombateInimigo(personagem* atacante, personagem* defensor, magia* tipo) {
     // defesa inimigo
     else if (escolha == 3 || (atacante->stamina < 15 && danoBase==0)) {
 
-        if(Dados()<=13)
+        if(Dados()<=9)
         {
         atacante->defendendo = 1;
        print_animated("\n%s está se defendendo!\n", atacante->nome);

@@ -44,7 +44,7 @@ void print_animated(const char* formato, ...) {
     for (int i = 0; buffer[i] != '\0'; i++) {
         putchar(buffer[i]);
         fflush(stdout);
-        SLEEP(20);
+        SLEEP(10);
     }
 }
 
@@ -84,6 +84,14 @@ void CriticoInimigo(int* danoBase)
 
 
 void mostrarStatus(personagem* j,personagem* i)
+{
+   print_animated("\n======= STATUS =======\n");
+   print_animated("%s - HP: %d | Mana: %d | Stamina: %d\n", j->nome, j->hp, j->mana, j->stamina);
+   print_animated("%s - HP: %d | Mana: %d | Stamina: %d\n", i->nome, i->hp, i->mana, i->stamina);
+   print_animated("=======================\n");
+}
+
+void mostrarStatusM(personagem* j,Mago* i)
 {
    print_animated("\n======= STATUS =======\n");
    print_animated("%s - HP: %d | Mana: %d | Stamina: %d\n", j->nome, j->hp, j->mana, j->stamina);
